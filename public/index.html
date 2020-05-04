@@ -19,10 +19,15 @@
             </div>
         </div>
         <script>
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             let user;
             let mySocket
             function connect() {
-                // TO IMPLEMENT
+                mySocket = new WebSocket('ws://localhost:3001');
+
+                mySocket.onopen = (event) => {
+                    console.info('WebSocket connection opened ', event);
+                };
             }
 
             function connectUser() {
